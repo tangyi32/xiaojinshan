@@ -1,16 +1,16 @@
 /* 设置字体和页面布局 */
 body {
     font-family: Arial, sans-serif;
-    font-size: 18px; /* 增大整个页面的字体 */
+    font-size: 18px;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 h1 {
-    text-align: center; /* 标题居中 */
-    font-size: 32px;  /* 标题增大 */
-    margin-bottom: 20px; /* 标题和其他内容的间隔 */
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
 }
 
 /* 图片和文字容器 */
@@ -18,25 +18,36 @@ h1 {
     max-width: 800px;
     margin: auto;
     padding: 20px;
-    text-align: center; /* 让容器内的所有内容居中 */
+    text-align: center;
 }
 
 /* 图片网格布局 */
 #gallery {
-    display: grid; /* 使用 grid 布局 */
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 自动调整列数，最小宽度 250px */
-    gap: 20px; /* 图片之间的间距 */
-    justify-items: center; /* 图片居中对齐 */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 默认自动填充列 */
+    gap: 20px;
+    justify-items: center;
     padding: 20px;
+}
+
+/* 让手机端变成两列 */
+@media (max-width: 768px) {
+    #gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2列布局 */
+        gap: 10px;
+    }
+    .image-item p {
+        font-size: 24px; /* 避免手机端文字过大 */
+    }
 }
 
 /* 图片样式 */
 .image-item img {
-    max-width: 100%; /* 图片宽度最大为容器宽度 */
-    height: auto; /* 保持图片比例 */
-    border-radius: 10px; /* 让图片四角圆润 */
-    box-shadow: 2px 2px 10px rgba(88, 231, 17, 0.878); /* 添加阴影，增强立体感 */
-    transition: transform 0.3s ease-in-out; /* 图片动画效果 */
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(88, 231, 17, 0.878);
+    transition: transform 0.3s ease-in-out;
 }
 
 /* 鼠标悬停时放大图片 */
@@ -47,29 +58,29 @@ h1 {
 /* 图片文字描述 */
 .image-item p {
     margin-top: 10px;
-    font-size: 40px; /* 增大描述文字 */
+    font-size: 40px;
     color: #520f9e;
-    text-align: center; /* 文字居中 */
+    text-align: center;
 }
 
-/* 给图片的描述文字加点间距 */
+/* 让每张图片和文字之间有间距 */
 .image-item {
     text-align: center;
-    margin-bottom: 30px; /* 让每张图片和文字之间有间距 */
+    margin-bottom: 30px;
 }
 
 /* 设置二维码和文字容器 */
 #top-right-corner {
-    position: fixed;  /* 使用 fixed 定位，使元素固定在页面右上角 */
-    top: 12px;        /* 距离页面顶部 20px */
-    right: 14px;      /* 距离页面右边 20px */
-    text-align: center; /* 让文字和二维码居中对齐 */
-    z-index: 1000;    /* 确保元素层级在其他内容之上 */
+    position: fixed;
+    top: 12px;
+    right: 14px;
+    text-align: center;
+    z-index: 1000;
 }
 
 /* 设置二维码的大小 */
 #qr-code {
-    width: 80px;  /* 设置二维码的宽度 */
-    height: 100px; /* 设置二维码的高度 */
-    margin-bottom: 3px;  /* 二维码和文字之间的间距 */
+    width: 80px;
+    height: 100px;
+    margin-bottom: 3px;
 }
