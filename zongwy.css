@@ -7,6 +7,7 @@ body {
     box-sizing: border-box;
 }
 
+/* 标题样式 */
 h1 {
     text-align: center;
     font-size: 32px;
@@ -21,29 +22,37 @@ h1 {
     text-align: center;
 }
 
-/* 图片网格布局 */
+/* 使用 flexbox 让图片自适应 */
 #gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 默认自动填充列 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 居中排列 */
     gap: 20px;
-    justify-items: center;
     padding: 20px;
+}
+
+/* 适配不同屏幕的图片大小 */
+.image-item {
+    flex: 1 1 calc(50% - 20px); /* 默认 2 列布局 */
+    max-width: 350px; /* 限制最大宽度 */
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 /* 让手机端变成两列 */
 @media (max-width: 768px) {
-    #gallery {
-        grid-template-columns: repeat(2, 1fr); /* 2列布局 */
-        gap: 10px;
+    .image-item {
+        flex: 1 1 45%; /* 让图片均匀分布，占屏幕 45% */
     }
     .image-item p {
-        font-size: 24px; /* 避免手机端文字过大 */
+        font-size: 20px; /* 避免手机端文字过大 */
     }
 }
 
 /* 图片样式 */
 .image-item img {
-    max-width: 100%;
+    width: 100%; /* 让图片占满容器 */
+    max-width: 200px; /* 限制最大宽度，避免过大 */
     height: auto;
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(88, 231, 17, 0.878);
@@ -58,15 +67,9 @@ h1 {
 /* 图片文字描述 */
 .image-item p {
     margin-top: 10px;
-    font-size: 40px;
+    font-size: 24px;
     color: #520f9e;
     text-align: center;
-}
-
-/* 让每张图片和文字之间有间距 */
-.image-item {
-    text-align: center;
-    margin-bottom: 30px;
 }
 
 /* 设置二维码和文字容器 */
