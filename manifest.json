@@ -2,7 +2,7 @@
     "name": "三个字梦书中文版",
     "short_name": "梦书中文板",
     "description": "三个字中文版",
-    "start_url": "/",
+    "start_url": "./",  
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
