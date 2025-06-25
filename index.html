@@ -18,8 +18,74 @@
         gtag('config', 'G-M59REKX567');
     </script>
 
-    <!-- ✅ 二维码样式 -->
+    <!-- ✅ 自定义样式 -->
     <style>
+        body {
+            font-family: sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding-bottom: 80px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* 图片区域布局 */
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .image-item {
+            width: 160px;
+            text-align: center;
+        }
+
+        .image-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+
+        .image-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .image-item p {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        #add-to-home {
+            margin-top: 40px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #f97316;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #add-to-home:hover {
+            background: #ea580c;
+        }
+
+        /* 二维码样式 */
         .qrcode-container {
             position: fixed;
             top: 10px;
@@ -52,23 +118,40 @@
     <div class="container">
         <h1>选择你要访问的页面</h1>
 
-        <div id="gallery">
-            <!-- 第一张图片 -->
-            <div class="image-item">
-                <a href="https://sangezisousuo.vercel.app/">
-                    <img src="https://cdn.jsdelivr.net/gh/tangyi32/sangezi/photo_1_2025-03-29_17-28-47.jpg" alt="图片1">
-                </a>
-                <p>三个字梦书</p>
-            </div>
+        <!-- ✅ 网页结构不变，只加了第四张图片 -->
+<div id="gallery">
+    <!-- 第一张图片 -->
+    <div class="image-item">
+        <a href="https://sangezisousuo.vercel.app/">
+            <img src="https://cdn.jsdelivr.net/gh/tangyi32/sangezi/photo_1_2025-03-29_17-28-47.jpg" alt="图片1">
+        </a>
+        <p>三个字梦书</p>
+    </div>
 
-            <!-- 第二张图片 -->
-            <div class="image-item">
-                <a href="https://tangyi32.github.io/-/">
-                    <img src="https://cdn.jsdelivr.net/gh/tangyi32/sangezi/photo_1_2025-03-29_17-28-47.jpg" alt="图片2">
-                </a>
-                <p>三个字开奖记录</p>
-            </div>
-        </div>
+    <!-- 第二张图片 -->
+    <div class="image-item">
+        <a href="https://tangyi32.github.io/-/">
+            <img src="https://cdn.jsdelivr.net/gh/tangyi32/sangezi/photo_1_2025-03-29_17-28-47.jpg" alt="图片2">
+        </a>
+        <p>三个字开奖记录</p>
+    </div>
+
+    <!-- 第三张图片 -->
+    <div class="image-item">
+        <a href="https://dailya777.com">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpo1QnlxAId3HkBJd8nCB--uzlnFe7_QUuqQ&s" alt="图片3">
+        </a>
+        <p>捕鱼棋牌网页版</p>
+    </div>
+
+    <!-- ✅ 第四张图片 -->
+    <div class="image-item">
+        <a href="https://d4416c.jjhuatms.com/tpcak4tf">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpo1QnlxAId3HkBJd8nCB--uzlnFe7_QUuqQ&s" alt="图片4">
+        </a>
+        <p>捕鱼棋牌app下载</p>
+    </div>
+</div>
 
         <!-- 📲 添加到桌面按钮 -->
         <button id="add-to-home">📲 添加到桌面</button>
@@ -84,7 +167,6 @@
     <div class="qrcode-container">
         <img src="https://github.com/tangyi32/sangezi/blob/main/photo_2025-03-10_12-14-21.jpg?raw=true" alt="二维码">
         <p>微信反馈</p>
-        <p>长按二维码</p>
     </div>
 </body>
 </html>
